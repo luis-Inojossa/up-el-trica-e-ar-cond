@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>UPA Elétrica &amp; Ar - Serviços Profissionais</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#43474f",
+                        "on-tertiary-fixed-variant": "#264191",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#001b3c",
+                        "outline": "#737780",
+                        "secondary-fixed": "#ffe16d",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-secondary-fixed-variant": "#544600",
+                        "deep-navy": "#172554",
+                        "secondary-container": "#fcd400",
+                        "on-background": "#191c1e",
+                        "tertiary-fixed-dim": "#b6c4ff",
+                        "tertiary": "#001855",
+                        "inverse-surface": "#2d3133",
+                        "outline-variant": "#c3c6d1",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#8098ed",
+                        "on-tertiary-fixed": "#00164e",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#a7c8ff",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-surface": "#191c1e",
+                        "success-green": "#22C55E",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed": "#221b00",
+                        "secondary": "#705d00",
+                        "surface-dim": "#d8dadc",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#799dd6",
+                        "on-secondary-container": "#6e5c00",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed-dim": "#e9c400",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#0b2c7d",
+                        "primary-container": "#003366",
+                        "tertiary-fixed": "#dce1ff",
+                        "surface": "#f7f9fb",
+                        "surface-tint": "#3a5f94",
+                        "info-blue": "#BFDBFE",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "background": "#f7f9fb",
+                        "primary": "#001e40",
+                        "surface-container-highest": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-sm": "48px",
+                        "section-gap-lg": "80px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Oswald"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Oswald"],
+                        "headline-md": ["Oswald"],
+                        "cta-label": ["Inter"],
+                        "display-lg": ["Oswald"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "cta-label": ["16px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 51, 102, 0.1);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+    <header class="fixed top-0 w-full z-50 shadow-md"
+        style="background: rgba(10,20,50,0.97); backdrop-filter: blur(10px);">
+        <nav class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+            <!-- Logo com scale para compensar canvas SVG grande -->
+            <div style="width:180px; height:72px; overflow:visible; position:relative; flex-shrink:0;">
+                <img alt="Logo UPA Elétrica e Ar Condicionado" src="logo.svg"
+                    style="height:72px; width:auto; transform:scale(3.5); transform-origin:left center; display:block;" />
+            </div>
+            <ul class="hidden md:flex gap-8 items-center">
+                <li><a style="color:#FCD400;font-weight:700;border-bottom:2px solid #FCD400;padding-bottom:4px;font-family:'Inter',sans-serif;text-decoration:none;"
+                        href="#inicio">Início</a></li>
+                <li><a style="color:rgba(255,255,255,0.8);font-family:'Inter',sans-serif;text-decoration:none;transition:color 0.2s;"
+                        href="#servicos" onmouseover="this.style.color='#FCD400'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.8)'">Serviços</a></li>
+                <li><a style="color:rgba(255,255,255,0.8);font-family:'Inter',sans-serif;text-decoration:none;transition:color 0.2s;"
+                        href="#por-que" onmouseover="this.style.color='#FCD400'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.8)'">Sobre Nós</a></li>
+                <li><a style="color:rgba(255,255,255,0.8);font-family:'Inter',sans-serif;text-decoration:none;transition:color 0.2s;"
+                        href="#processo" onmouseover="this.style.color='#FCD400'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.8)'">Processo</a></li>
+                <li><a style="color:rgba(255,255,255,0.8);font-family:'Inter',sans-serif;text-decoration:none;transition:color 0.2s;"
+                        href="#depoimentos" onmouseover="this.style.color='#FCD400'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.8)'">Depoimentos</a></li>
+            </ul>
+            <a style="background:#FCD400;color:#001e40;padding:10px 22px;border-radius:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.2s;"
+                href="https://wa.me/5516993860670" onmouseover="this.style.boxShadow='0 4px 16px rgba(252,212,0,0.4)'"
+                onmouseout="this.style.boxShadow='none'">
+                Orçamento WhatsApp
+            </a>
+            <button class="md:hidden" style="color:#FCD400;background:none;border:none;cursor:pointer;">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </nav>
+    </header>
+    <main class="mt-20">
+        <section class="relative overflow-hidden min-h-[85vh] flex flex-col justify-center" id="inicio"
+            style="background-image: url('fundoHero.png'); background-size: cover; background-position: 60% center;">
+            <!-- Overlay escuro gradiente para legibilidade do texto à esquerda -->
+            <div class="absolute inset-0 z-0"
+                style="background: linear-gradient(to right, rgba(10,20,50,0.85) 35%, rgba(10,20,50,0.40) 65%, rgba(10,20,50,0.05) 100%);">
+            </div>
+
+            <!-- Detalhe decorativo amarelo no canto inferior direito -->
+            <div class="absolute bottom-0 right-0 z-0 pointer-events-none"
+                style="width:120px;height:120px;overflow:hidden;">
+                <div
+                    style="width:0;height:0;border-style:solid;border-width:0 0 120px 120px;border-color:transparent transparent #FCD400 transparent;">
+                </div>
+            </div>
+
+            <div class="max-w-container-max mx-auto px-gutter relative z-10 w-full py-section-gap-lg"
+                style="display:grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px;">
+                <!-- Conteúdo somente à esquerda -->
+                <div class="space-y-7">
+
+                    <!-- Título principal -->
+                    <h1
+                        style="font-family:'Oswald',sans-serif; font-size:clamp(2.4rem,4.2vw,3.6rem); font-weight:700; line-height:1.15; color:#ffffff; margin:0;">
+                        Serviços de elétrica e<br>ar-condicionado com<br>
+                        <span style="color:#FCD400;">segurança, agilidade<br>e qualidade</span>
+                    </h1>
+
+                    <!-- Subtítulo -->
+                    <p
+                        style="font-family:'Inter',sans-serif; font-size:1rem; color:rgba(255,255,255,0.82); line-height:1.6; max-width:480px;">
+                        Atendimento residencial e comercial para instalação,<br>
+                        manutenção, higienização e soluções elétricas.
+                    </p>
+
+                    <!-- Botões CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4 items-start">
+                        <!-- Botão WhatsApp amarelo -->
+                        <a href="https://wa.me/5516993860670"
+                            style="display:inline-flex;align-items:center;gap:10px;background:#FCD400;color:#001e40;padding:14px 28px;border-radius:8px;font-family:'Inter',sans-serif;font-size:0.95rem;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 18px rgba(252,212,0,0.3);"
+                            onmouseover="this.style.boxShadow='0 6px 28px rgba(252,212,0,0.5)';this.style.transform='translateY(-1px)'"
+                            onmouseout="this.style.boxShadow='0 4px 18px rgba(252,212,0,0.3)';this.style.transform='translateY(0)'">
+                            <!-- Ícone WhatsApp SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="#001e40">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            Solicitar orçamento no WhatsApp
+                        </a>
+
+                        <!-- Botão Conhecer Serviços -->
+                        <a href="#servicos"
+                            style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#ffffff;padding:13px 28px;border-radius:8px;font-family:'Inter',sans-serif;font-size:0.95rem;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,0.7);transition:all 0.2s;"
+                            onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+                            onmouseout="this.style.background='transparent'">
+                            Conhecer serviços
+                            <span style="font-size:1.1rem;">&#8964;</span>
+                        </a>
+                    </div>
+
+                    <!-- 3 cards de benefícios -->
+                    <div style="display:flex;gap:32px;padding-top:12px;flex-wrap:wrap;">
+                        <!-- Card 1 -->
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div
+                                style="width:46px;height:46px;border-radius:50%;border:2px solid #FCD400;display:flex;align-items:center;justify-content:center;background:rgba(252,212,0,0.08);flex-shrink:0;">
+                                <span class="material-symbols-outlined"
+                                    style="color:#FCD400;font-size:22px;font-variation-settings:'FILL' 1;">bolt</span>
+                            </div>
+                            <div>
+                                <p
+                                    style="font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:700;color:#ffffff;margin:0;line-height:1.3;">
+                                    Atendimento<br>rápido</p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div
+                                style="width:46px;height:46px;border-radius:50%;border:2px solid #FCD400;display:flex;align-items:center;justify-content:center;background:rgba(252,212,0,0.08);flex-shrink:0;">
+                                <span class="material-symbols-outlined"
+                                    style="color:#FCD400;font-size:22px;font-variation-settings:'FILL' 1;">domain</span>
+                            </div>
+                            <div>
+                                <p
+                                    style="font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:700;color:#ffffff;margin:0;line-height:1.3;">
+                                    Serviço residencial<br>e comercial</p>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div
+                                style="width:46px;height:46px;border-radius:50%;border:2px solid #FCD400;display:flex;align-items:center;justify-content:center;background:rgba(252,212,0,0.08);flex-shrink:0;">
+                                <span class="material-symbols-outlined"
+                                    style="color:#FCD400;font-size:22px;font-variation-settings:'FILL' 1;">verified_user</span>
+                            </div>
+                            <div>
+                                <p
+                                    style="font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:700;color:#ffffff;margin:0;line-height:1.3;">
+                                    Orçamento<br>via WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+        <section class="py-section-gap-lg px-gutter max-w-container-max mx-auto" id="servicos">
+            <div class="text-center mb-16 max-w-3xl mx-auto space-y-4">
+                <h2 class="font-headline-md text-headline-md text-primary">Soluções Completas para seu Imóvel</h2>
+                <div class="h-1.5 w-24 bg-secondary-container mx-auto rounded-full"></div>
+                <p class="font-body-md text-on-surface-variant">Oferecemos uma gama completa de serviços técnicos
+                    executados por profissionais altamente qualificados.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="service-card p-6 bg-white border border-gray-200 rounded-2xl transition-all flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div class="flex gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background-color: #001855;">
+                            <span class="material-symbols-outlined text-[32px]" style="color: #FCD400;">bolt</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-[1.15rem] font-bold mb-2 leading-tight"
+                                style="color: #001855;">Elétrica residencial<br>e comercial</h3>
+                            <p class="font-body-sm text-gray-600 text-sm leading-relaxed">Instalações, reparos,
+                                adequações e manutenção elétrica com segurança.</p>
+                        </div>
+                    </div>
+                    <a class="py-3 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 w-full hover:brightness-95"
+                        href="https://wa.me/5516993860670" style="background-color: #FCD400; color: #001855;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#001855">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Pedir orçamento
+                    </a>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="service-card p-6 bg-white border border-gray-200 rounded-2xl transition-all flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div class="flex gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background-color: #001855;">
+                            <span class="material-symbols-outlined text-[32px]" style="color: #FCD400;">ac_unit</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-[1.15rem] font-bold mb-2 leading-tight"
+                                style="color: #001855;">Instalação de<br>ar-condicionado</h3>
+                            <p class="font-body-sm text-gray-600 text-sm leading-relaxed">Instalação de aparelhos split
+                                com acabamento, suporte e orientação técnica.</p>
+                        </div>
+                    </div>
+                    <a class="py-3 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 w-full hover:brightness-95"
+                        href="https://wa.me/5516993860670" style="background-color: #FCD400; color: #001855;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#001855">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Pedir orçamento
+                    </a>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="service-card p-6 bg-white border border-gray-200 rounded-2xl transition-all flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div class="flex gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background-color: #001855;">
+                            <span class="material-symbols-outlined text-[32px]" style="color: #FCD400;">air</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-[1.15rem] font-bold mb-2 leading-tight"
+                                style="color: #001855;">Higienização de<br>ar-condicionado</h3>
+                            <p class="font-body-sm text-gray-600 text-sm leading-relaxed">Limpeza completa para melhorar
+                                a qualidade do ar e o desempenho do equipamento.</p>
+                        </div>
+                    </div>
+                    <a class="py-3 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 w-full hover:brightness-95"
+                        href="https://wa.me/5516993860670" style="background-color: #FCD400; color: #001855;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#001855">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Pedir orçamento
+                    </a>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="service-card p-6 bg-white border border-gray-200 rounded-2xl transition-all flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div class="flex gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background-color: #001855;">
+                            <span class="material-symbols-outlined text-[32px]" style="color: #FCD400;">handyman</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-[1.15rem] font-bold mb-2 leading-tight"
+                                style="color: #001855;">Manutenção<br>preventiva</h3>
+                            <p class="font-body-sm text-gray-600 text-sm leading-relaxed">Evite falhas, mau desempenho e
+                                gastos inesperados com manutenção periódica.</p>
+                        </div>
+                    </div>
+                    <a class="py-3 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 w-full hover:brightness-95"
+                        href="https://wa.me/5516993860670" style="background-color: #FCD400; color: #001855;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#001855">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Pedir orçamento
+                    </a>
+                </div>
+                <!-- Card 5 -->
+                <div
+                    class="service-card p-6 bg-white border border-gray-200 rounded-2xl transition-all flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div class="flex gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background-color: #001855;">
+                            <span class="material-symbols-outlined text-[32px]" style="color: #FCD400;">settings</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-[1.15rem] font-bold mb-2 leading-tight"
+                                style="color: #001855;">Manutenção<br>corretiva</h3>
+                            <p class="font-body-sm text-gray-600 text-sm leading-relaxed">Correção de problemas
+                                elétricos e falhas em equipamentos de ar-condicionado.</p>
+                        </div>
+                    </div>
+                    <a class="py-3 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 w-full hover:brightness-95"
+                        href="https://wa.me/5516993860670" style="background-color: #FCD400; color: #001855;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#001855">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Pedir orçamento
+                    </a>
+                </div>
+                <!-- Card 6 -->
+                <div
+                    class="service-card p-6 bg-white border border-gray-200 rounded-2xl transition-all flex flex-col justify-between shadow-sm hover:shadow-md">
+                    <div class="flex gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background-color: #001855;">
+                            <span class="material-symbols-outlined text-[32px]" style="color: #FCD400;">domain</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-[1.15rem] font-bold mb-2 leading-tight"
+                                style="color: #001855;">Atendimento<br>comercial</h3>
+                            <p class="font-body-sm text-gray-600 text-sm leading-relaxed">Soluções para empresas, lojas,
+                                escritórios e ambientes comerciais.</p>
+                        </div>
+                    </div>
+                    <a class="py-3 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 w-full hover:brightness-95"
+                        href="https://wa.me/5516993860670" style="background-color: #FCD400; color: #001855;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#001855">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Pedir orçamento
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- BANNER DE URGÊNCIA -->
+        <section class="bg-[#001855] py-10 px-gutter mt-12">
+            <div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="flex items-center gap-8">
+                    <!-- Raio amarelo enorme -->
+                    <svg class="hidden md:block w-24 h-24 flex-shrink-0" viewBox="0 0 24 24" fill="#FCD400"
+                        xmlns="http://www.w3.org/2000/svg" style="transform: scale(1.5);">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                    <div class="text-center md:text-left space-y-2">
+                        <h2 class="font-bold text-[1.6rem] text-white tracking-tight">Precisa de manutenção ou
+                            instalação com urgência?</h2>
+                        <p class="text-gray-300 font-medium">Fale agora com nossa equipe e agende uma visita.</p>
+                    </div>
+                </div>
+                <a class="flex items-center gap-2 bg-[#FCD400] text-[#001855] px-8 py-3.5 rounded-xl font-bold hover:brightness-95 transition-all whitespace-nowrap shadow-lg"
+                    href="https://wa.me/5516993860670">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#001855">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    Falar no WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- SOBRE NÓS -->
+        <section class="py-24 px-gutter bg-white" id="por-que">
+            <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
+                <!-- Imagem -->
+                <div class="rounded-2xl overflow-hidden shadow-2xl relative">
+                    <img alt="Técnico trabalhando" class="w-full h-auto object-cover object-center max-h-[450px]"
+                        src="imagem.png" />
+                </div>
+                <!-- Conteúdo -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-[#FCD400] font-bold text-[1.05rem] uppercase tracking-wider">POR QUE ESCOLHER A
+                            UP?</span>
+                        <h2 class="font-bold text-[2.5rem] leading-tight text-[#001855] mt-2 mb-6">Compromisso com
+                            qualidade,<br>segurança e confiança</h2>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-x-6 gap-y-5">
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-[#FCD400] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-white text-[16px] font-bold">check</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">Atendimento residencial e comercial</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-[#FCD400] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-white text-[16px] font-bold">check</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">Serviço limpo e organizado</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-[#FCD400] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-white text-[16px] font-bold">check</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">Equipe preparada e qualificada</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-[#FCD400] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-white text-[16px] font-bold">check</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">Orçamento rápido pelo WhatsApp</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-[#FCD400] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-white text-[16px] font-bold">check</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">Segurança na execução</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-[#FCD400] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-white text-[16px] font-bold">check</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">Compromisso com o melhor desempenho dos
+                                equipamentos</span>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <a class="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl font-bold text-[1.05rem] hover:brightness-95 transition-all shadow-md"
+                            href="https://wa.me/5516993860670" style="background-color: #FCD400; color: #001855; width: max-content;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="#001855">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO -->
+        <section class="bg-white py-16 px-gutter" id="processo">
+            <div class="max-w-container-max mx-auto text-center">
+                <span class="text-[#FCD400] font-bold text-sm uppercase tracking-wider">Como funciona o
+                    atendimento</span>
+                <h2 class="font-bold text-[2.5rem] text-[#001855] mt-2 mb-20">Simples, rápido e sem complicação</h2>
+
+                <div class="relative max-w-5xl mx-auto hidden md:block">
+                    <!-- Linha tracejada horizontal de fundo -->
+                    <div class="absolute top-1/2 left-[10%] right-[10%] border-t-2 border-dashed border-gray-200 -z-0"
+                        style="transform: translateY(-50%);"></div>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-4 relative z-10 max-w-5xl mx-auto">
+                    <!-- Passo 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="relative">
+                            <div
+                                class="absolute -top-3 -left-3 w-7 h-7 bg-[#001855] text-[#FCD400] rounded-full flex items-center justify-center font-bold text-sm z-20">
+                                1</div>
+                            <div
+                                class="w-[88px] h-[88px] bg-white rounded-full border-[3px] border-[#001855] flex items-center justify-center relative z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                    fill="#001855">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="font-medium text-[#001855] mt-5 leading-snug">Você chama<br>no WhatsApp</p>
+                    </div>
+                    <!-- Passo 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="relative">
+                            <div
+                                class="absolute -top-3 -left-3 w-7 h-7 bg-[#001855] text-[#FCD400] rounded-full flex items-center justify-center font-bold text-sm z-20">
+                                2</div>
+                            <div
+                                class="w-[88px] h-[88px] bg-white rounded-full border-[3px] border-[#001855] flex items-center justify-center relative z-10">
+                                <span class="material-symbols-outlined text-[#001855] text-4xl">headset_mic</span>
+                            </div>
+                        </div>
+                        <p class="font-medium text-[#001855] mt-5 leading-snug">Entendemos sua<br>necessidade</p>
+                    </div>
+                    <!-- Passo 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="relative">
+                            <div
+                                class="absolute -top-3 -left-3 w-7 h-7 bg-[#001855] text-[#FCD400] rounded-full flex items-center justify-center font-bold text-sm z-20">
+                                3</div>
+                            <div
+                                class="w-[88px] h-[88px] bg-white rounded-full border-[3px] border-[#001855] flex items-center justify-center relative z-10">
+                                <span class="material-symbols-outlined text-[#001855] text-4xl">calendar_month</span>
+                            </div>
+                        </div>
+                        <p class="font-medium text-[#001855] mt-5 leading-snug">Agendamos<br>a visita</p>
+                    </div>
+                    <!-- Passo 4 -->
+                    <div class="flex flex-col items-center">
+                        <div class="relative">
+                            <div
+                                class="absolute -top-3 -left-3 w-7 h-7 bg-[#001855] text-[#FCD400] rounded-full flex items-center justify-center font-bold text-sm z-20">
+                                4</div>
+                            <div
+                                class="w-[88px] h-[88px] bg-white rounded-full border-[3px] border-[#001855] flex items-center justify-center relative z-10">
+                                <span
+                                    class="material-symbols-outlined text-[#001855] text-4xl">home_repair_service</span>
+                            </div>
+                        </div>
+                        <p class="font-medium text-[#001855] mt-5 leading-snug">Executamos o serviço<br>com segurança
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 flex justify-center">
+                    <a class="flex items-center gap-2 bg-[#FCD400] text-[#001855] px-10 py-3.5 rounded-xl font-bold hover:brightness-95 transition-all shadow-md"
+                        href="https://wa.me/5516993860670">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#001855">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Agendar atendimento
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="py-section-gap-lg px-gutter max-w-container-max mx-auto" id="depoimentos">
+            <h2 class="font-headline-md text-headline-md text-primary text-center mb-12">O que dizem nossos clientes
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-outline-variant/30 italic relative">
+                    <span class="material-symbols-outlined absolute -top-4 -left-2 text-6xl text-secondary-container/20"
+                        style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                    <p class="font-body-md text-on-surface mb-6">"Serviço impecável! Chamei para instalar dois
+                        ar-condicionados e a equipe foi super profissional, rápida e não deixou sujeira nenhuma.
+                        Recomendo muito!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center font-bold text-primary">
+                            RC</div>
+                        <div>
+                            <p class="font-label-bold text-primary">Ricardo Camargo</p>
+                            <p class="font-body-sm text-on-surface-variant">Cliente Residencial</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-outline-variant/30 italic relative">
+                    <span class="material-symbols-outlined absolute -top-4 -left-2 text-6xl text-secondary-container/20"
+                        style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                    <p class="font-body-md text-on-surface mb-6">"Fizeram toda a revisão elétrica da minha loja.
+                        Passaram muita segurança no diagnóstico e o preço foi bem justo. Empresa séria e comprometida."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center font-bold text-primary">
+                            AM</div>
+                        <div>
+                            <p class="font-label-bold text-primary">Ana Martins</p>
+                            <p class="font-body-sm text-on-surface-variant">Proprietária de Comércio</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-outline-variant/30 italic relative">
+                    <span class="material-symbols-outlined absolute -top-4 -left-2 text-6xl text-secondary-container/20"
+                        style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                    <p class="font-body-md text-on-surface mb-6">"A higienização do ar fez toda a diferença aqui em
+                        casa. O técnico explicou tudo e foi muito cuidadoso. Com certeza serei cliente fiel."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center font-bold text-primary">
+                            JP</div>
+                        <div>
+                            <p class="font-label-bold text-primary">Juliana Peres</p>
+                            <p class="font-body-sm text-on-surface-variant">Cliente Residencial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="px-gutter pb-section-gap-lg">
+            <div
+                class="max-w-container-max mx-auto rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl" style="background-color: #001855;">
+                <div class="relative z-10 space-y-6">
+                    <h2 class="font-bold text-3xl md:text-[2.5rem] leading-tight max-w-4xl mx-auto text-white">Cuide da parte elétrica e do seu ar-<br class="hidden md:block">condicionado com quem entende do assunto</h2>
+                    <p class="font-medium text-[0.95rem] text-[#90a4ae] max-w-2xl mx-auto leading-relaxed">Pare de adiar a manutenção! Garanta segurança e conforto para sua família ou empresa<br class="hidden md:block">agora mesmo.</p>
+                    <div class="pt-4">
+                        <a class="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full font-bold text-[1.05rem] hover:brightness-95 transition-all shadow-md mx-auto"
+                            href="https://wa.me/5516993860670" style="background-color: #FCD400; color: #001855;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="#001855">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            CHAMAR NO WHATSAPP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer style="background-color: #001855;" class="text-white py-16 px-gutter border-t border-gray-800">
+        <div class="max-w-container-max mx-auto">
+            <div class="flex flex-col md:flex-row justify-between gap-10 md:gap-4 lg:gap-10">
+                <!-- Column 1 -->
+                <div class="space-y-6 w-full md:w-1/4">
+                    <div style="width:160px; height:60px; overflow:visible; position:relative; flex-shrink:0;">
+                        <img alt="Logo UPA Elétrica e Ar Condicionado" src="logo.svg" style="height:60px; width:auto; transform:scale(3.2); transform-origin:left center; display:block;" />
+                    </div>
+                    <p class="text-[0.95rem] text-gray-300 leading-relaxed font-medium">
+                        Elétrica e ar-condicionado<br>para residências e empresas.
+                    </p>
+                    <div class="flex gap-5 pt-2">
+                        <a href="https://www.instagram.com/up.vagner/" target="_blank" class="hover:opacity-80 transition-opacity">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FCD400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/5516993860670" target="_blank" class="hover:opacity-80 transition-opacity">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#FCD400">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="w-full md:w-1/4 space-y-4">
+                    <h4 class="font-bold text-white uppercase text-[0.95rem] tracking-wider mb-6">SERVIÇOS</h4>
+                    <ul class="space-y-3 font-medium text-[0.95rem] text-gray-300">
+                        <li><a href="#servicos" class="hover:text-[#FCD400] transition-colors">Elétrica residencial e comercial</a></li>
+                        <li><a href="#servicos" class="hover:text-[#FCD400] transition-colors">Instalação de ar-condicionado</a></li>
+                        <li><a href="#servicos" class="hover:text-[#FCD400] transition-colors">Higienização de ar-condicionado</a></li>
+                        <li><a href="#servicos" class="hover:text-[#FCD400] transition-colors">Manutenção preventiva</a></li>
+                        <li><a href="#servicos" class="hover:text-[#FCD400] transition-colors">Manutenção corretiva</a></li>
+                        <li><a href="#servicos" class="hover:text-[#FCD400] transition-colors">Atendimento comercial</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="w-full md:w-1/4 space-y-4 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8 lg:pl-10">
+                    <h4 class="font-bold text-white uppercase text-[0.95rem] tracking-wider mb-6">FALE CONOSCO</h4>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#FCD400">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        <span class="font-bold text-[1.4rem] tracking-tight text-white">16 99386-0670</span>
+                    </div>
+                    <div class="space-y-2 text-[0.95rem] text-gray-300 font-medium">
+                        <p>Atendimento via WhatsApp</p>
+                        <p>Segunda a Sábado das 8h às 18h</p>
+                    </div>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="w-full md:w-1/4 space-y-4 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8 lg:pl-10">
+                    <h4 class="font-bold text-white uppercase text-[0.95rem] tracking-wider mb-6">ÁREA DE ATENDIMENTO</h4>
+                    <div class="space-y-4 text-[0.95rem] text-gray-300 font-medium">
+                        <p>Ribeirão Preto e região</p>
+                        <p>Atendimento residencial<br>e comercial</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="mt-12 pt-6 border-t border-white/10 text-center text-[#90a4ae] font-medium text-[0.85rem]">
+                <p>© 2024 UPA Elétrica e Ar Condicionado. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Micro-interaction for header scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+
+        // Simple smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
